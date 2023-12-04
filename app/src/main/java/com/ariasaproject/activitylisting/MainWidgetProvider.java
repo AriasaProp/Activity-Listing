@@ -11,12 +11,9 @@ public class MainWidgetProvider extends AppWidgetProvider {
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         for (int appWidgetId : appWidgetIds) {
-            updateAppWidget(context, appWidgetManager, appWidgetId);
+			      RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_layout);
+			      
+			      appWidgetManager.updateAppWidget(appWidgetId, views);
         }
-    }
-
-    private void updateAppWidget(Context context, AppWidgetManager appWidgetManager, int appWidgetId) {
-        RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_layout);
-        appWidgetManager.updateAppWidget(appWidgetId, views);
     }
 }
