@@ -20,4 +20,4 @@ jobs:
         uses: actions/upload-artifact@v3.1.2
         with:
           name: APK
-          path: ${{ github.workspace }}/android/build/outputs/apk/release/android-release.apk
+          path: ${{ github.workspace }}/build/outputs/apk/release/android-release.apk
