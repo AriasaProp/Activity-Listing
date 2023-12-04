@@ -2,4 +2,4 @@
 
 ![Project Image](ic_launcher.svg)
 
-Application for mining crypto in Low performance
+Application for list of activities
