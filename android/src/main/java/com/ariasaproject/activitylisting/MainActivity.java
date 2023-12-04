@@ -30,11 +30,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.RecyclerView.Adapter;
 
 public class MainActivity extends AppCompatActivity {
-    /*
-    static {
-        System.loadLibrary("ext");
-    }
-    */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

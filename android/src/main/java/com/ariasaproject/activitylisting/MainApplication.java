@@ -1,17 +1,13 @@
-package com.ariasaproject.poolminerlite;
+package com.ariasaproject.activitylisting;
 
 import android.app.Application;
 import android.content.res.Configuration;
 
-import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory;
-
 public class MainApplication extends Application {
-    private MinerViewModel minerViewModel;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        minerViewModel = new AndroidViewModelFactory(this).create(MinerViewModel.class);
     }
 
     @Override
@@ -22,9 +18,5 @@ public class MainApplication extends Application {
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-    }
-
-    public MinerViewModel getMinerViewModel() {
-        return minerViewModel;
     }
 }
