@@ -9,4 +9,12 @@
     android:theme="@style/WidgetTheme"
     android:background="@drawable/widget_background"
     android:padding="6dp" >
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Initialize!"
+        android:textSize="16sp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
