@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Pool Miner - Lite</string>
+    
+    <!-- main -->
+    <string name="mbtn_startmine">Start Mine</string>
+    <string name="mbtn_stopmine">Stop Mine</string>
+    <string name="mtxt_helperinputserver">Require</string>
+    <string name="mtxt_helperinputport">0 ~ 65535</string>
+    <string name="mtxt_labelspeed">Speed: </string>
+    <string name="mtxt_labelkeepscreenawake">Keep screen awake</string>
+    
+</resources>

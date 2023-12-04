@@ -1,0 +1,4 @@
+#ifndef _SHA256_ALGORITHM_
+#define _SHA256_ALGORITHM_
+
+#endif //_SHA256_ALGORITHM_
