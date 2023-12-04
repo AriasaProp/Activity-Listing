@@ -8,7 +8,6 @@
     tools:context="com.ariasaproject.activitylisting"
     android:padding="6dp" >
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/console_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"

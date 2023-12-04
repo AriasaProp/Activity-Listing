@@ -9,9 +9,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3.5.2
-      - name: Gradle Test Android
+      - uses: actions/checkout@v3.5.2
+      - name: Build
         uses: gradle/gradle-build-action@v2.4.2
         with:
           gradle-version: 8.4
@@ -20,4 +19,4 @@ jobs:
         uses: actions/upload-artifact@v3.1.2
         with:
           name: APK
-          path: ${{ github.workspace }}/android/build/outputs/apk/release/android-release.apk
+          path: ${{ github.workspace }}/app/build/outputs/apk/release/app-release.apk

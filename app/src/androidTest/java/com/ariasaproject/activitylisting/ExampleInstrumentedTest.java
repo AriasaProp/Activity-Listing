@@ -1,4 +1,4 @@
-package com.ariasaroject.poolminerlite;
+package com.ariasaroject.activitylisting;
 
 import static org.junit.Assert.*;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.ariasaroject.poolminerlite", appContext.getPackageName());
+        assertEquals("com.ariasaroject.activitylisting", appContext.getPackageName());
     }
 }

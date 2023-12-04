@@ -1,4 +1,4 @@
-package com.ariasaroject.poolminerlite;
+package com.ariasaroject.activitylisting;
 
 import static org.junit.jupiter.api.Assertions.*;
 
