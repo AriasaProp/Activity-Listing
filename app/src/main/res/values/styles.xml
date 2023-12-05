@@ -10,7 +10,6 @@
     <style name="AppTheme" parent="BaseTheme">
     </style>
     <style name="WidgetTheme" parent="BaseTheme">
-    		<item name="backgroundRadius">16dp</item>
     </style>
     
 </resources>

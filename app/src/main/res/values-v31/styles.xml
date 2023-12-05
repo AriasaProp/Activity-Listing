@@ -1,5 +1,0 @@
-<resources>
-    <style name="WidgetTheme" parent="BaseTheme">
-    		<item name="backgroundRadius">@android:dimen/system_app_widget_background_radius</item>
-    </style>
-</resources>
