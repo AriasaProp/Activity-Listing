@@ -19,15 +19,6 @@ import android.view.Window;
 import android.widget.SeekBar;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatButton;
-import androidx.appcompat.widget.AppCompatCheckBox;
-import androidx.appcompat.widget.AppCompatEditText;
-import androidx.appcompat.widget.AppCompatSeekBar;
-import androidx.appcompat.widget.AppCompatTextView;
-import androidx.core.text.HtmlCompat;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.RecyclerView.Adapter;
 
 public class MainActivity extends AppCompatActivity {
     @Override
@@ -41,8 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void checkBatteryOptimizations() {
         PowerManager powerManager = (PowerManager) getSystemService(Context.POWER_SERVICE);
-        if (powerManager != null
-                && !powerManager.isIgnoringBatteryOptimizations(getPackageName())) {
+        if (powerManager != null && !powerManager.isIgnoringBatteryOptimizations(getPackageName())) {
             // Jika izin tidak diizinkan, tampilkan dialog untuk meminta izin
             Intent intent = new Intent();
             intent.setAction(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS);
@@ -59,8 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case REQUEST_BATTERY_OPTIMIZATIONS:
                 PowerManager powerManager = (PowerManager) getSystemService(Context.POWER_SERVICE);
-                if (powerManager != null
-                        && powerManager.isIgnoringBatteryOptimizations(getPackageName())) {
+                if (powerManager != null && powerManager.isIgnoringBatteryOptimizations(getPackageName())) {
                     // Izin diberikan, lanjutkan dengan operasi normal
                 } else {
                     // Izin ditolak, berikan pengguna instruksi lebih lanjut atau tindakan yang

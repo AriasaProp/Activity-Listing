@@ -2,4 +2,6 @@
     <string name="app_name">Activity Listing</string>
     <string name="widget_description">Widget ini menampilkan daftar acara yang akan dijalani.</string>
     <string name="widget_update_interval">1800000</string>
+    
+    <string name="widget_layout_label">Activity & Task List</string>
 </resources>
