@@ -31,7 +31,7 @@ public class MainWidgetProvider extends AppWidgetProvider {
             rv.setEmptyView(R.id.widget_list, R.id.empty_view);
 
             // Setup intent which points to the WidgetService which will provide the views for this collection.
-            Intent intent = new Intent(context, WidgetService.class);
+            Intent intent = new Intent(context, MainWidgetProviderService.class);
             intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
             // When intents are compared, the extras are ignored, so we need to embed the extras
             // into the data so that the extras will not be ignored.
