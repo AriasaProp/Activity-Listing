@@ -38,7 +38,9 @@ public final class MainWidgetProviderService extends RemoteViewsService {
             // In onCreate() you setup any connections / cursors to your data source. Heavy lifting,
             // for example downloading or creating content etc, should be deferred to onDataSetChanged()
             // or getViewAt(). Taking more than 20 seconds in this call will result in an ANR.
-
+            mWidgetItems.add(new WidgetItem("Label A", "description A long"));
+            mWidgetItems.add(new WidgetItem("Label B", "description B long"));
+            mWidgetItems.add(new WidgetItem("Label C", "description C long"));
 
         }
 
@@ -98,12 +100,6 @@ public final class MainWidgetProviderService extends RemoteViewsService {
 
         @Override
         public void onDataSetChanged() {
-            // This is triggered when you call AppWidgetManager notifyAppWidgetViewDataChanged
-            // on the collection view corresponding to this factory. You can do heaving lifting in
-            // here, synchronously. For example, if you need to process an image, fetch something
-            // from the network, etc., it is ok to do it here, synchronously. The widget will remain
-            // in its current state while work is being done here, so you don't need to worry about
-            // locking up the widget.
             mWidgetItems.clear();
 
             Random random = new Random();

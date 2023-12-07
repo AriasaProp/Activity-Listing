@@ -25,20 +25,13 @@ public class MainWidgetProvider extends AppWidgetProvider {
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         for (int appWidgetId : appWidgetIds) {
             RemoteViews rv = new RemoteViews(context.getPackageName(), R.layout.widget_layout);
-
-            // The empty view is displayed when the collection has no items. It should be a sibling
-            // of the collection view:
             rv.setEmptyView(R.id.widget_list, R.id.empty_view);
-
-            // Setup intent which points to the WidgetService which will provide the views for this collection.
+            
             Intent intent = new Intent(context, MainWidgetProviderService.class);
             intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
-            // When intents are compared, the extras are ignored, so we need to embed the extras
-            // into the data so that the extras will not be ignored.
             intent.setData(Uri.parse(intent.toUri(Intent.URI_INTENT_SCHEME)));
             rv.setRemoteAdapter(R.id.widget_list, intent);
 
-            // Setup refresh button:
             Intent refreshIntent = new Intent(context, MainWidgetProvider.class);
             refreshIntent.setAction(MainWidgetProvider.REFRESH_WIDGET_ACTION);
             refreshIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
@@ -46,10 +39,6 @@ public class MainWidgetProvider extends AppWidgetProvider {
             PendingIntent refreshPendingIntent = PendingIntent.getBroadcast(context, 0, refreshIntent, PendingIntent.FLAG_UPDATE_CURRENT);
             rv.setOnClickPendingIntent(R.id.refresh_button, refreshPendingIntent);
 
-            // Here we setup the a pending intent template. Individuals items of a collection
-            // cannot setup their own pending intents, instead, the collection as a whole can
-            // setup a pending intent template, and the individual items can set a fillInIntent
-            // to create unique before on an item to item basis.
             Intent toastIntent = new Intent(context, MainWidgetProvider.class);
             toastIntent.setAction(MainWidgetProvider.LIST_ITEM_CLICKED_ACTION);
             toastIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
