@@ -62,8 +62,8 @@ public final class MainWidgetProviderService extends RemoteViewsService {
             rv.setTextViewText(R.id.widget_item, widgetItem.mLabel);
 
             // Next, we set a fill-intent which will be used to fill-in the pending intent template
-            // which is set on the collection view in AppWidgetProvider.
-            Intent fillInIntent = new Intent().putExtra(WidgetProvider.EXTRA_CLICKED_FILE, widgetItem.mFile);
+            // which is set on the collection view in MainWidgetProvider
+            Intent fillInIntent = new Intent().putExtra(MainWidgetProviderEXTRA_CLICKED_FILE, widgetItem.mFile);
             rv.setOnClickFillInIntent(R.id.widget_item_layout, fillInIntent);
 
             // You can do heaving lifting in here, synchronously. For example, if you need to
