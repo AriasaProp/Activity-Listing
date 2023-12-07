@@ -39,7 +39,7 @@ public class MainWidgetProvider extends AppWidgetProvider {
             rv.setRemoteAdapter(R.id.widget_list, intent);
 
             // Setup refresh button:
-            Intent refreshIntent = new Intent(context, WidgetProvider.class);
+            Intent refreshIntent = new Intent(context, MainWidgetProvider.class);
             refreshIntent.setAction(WidgetProvider.REFRESH_WIDGET_ACTION);
             refreshIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
             refreshIntent.setData(Uri.parse(refreshIntent.toUri(Intent.URI_INTENT_SCHEME)));
@@ -50,7 +50,7 @@ public class MainWidgetProvider extends AppWidgetProvider {
             // cannot setup their own pending intents, instead, the collection as a whole can
             // setup a pending intent template, and the individual items can set a fillInIntent
             // to create unique before on an item to item basis.
-            Intent toastIntent = new Intent(context, WidgetProvider.class);
+            Intent toastIntent = new Intent(context, MainWidgetProvider.class);
             toastIntent.setAction(WidgetProvider.LIST_ITEM_CLICKED_ACTION);
             toastIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
             intent.setData(Uri.parse(intent.toUri(Intent.URI_INTENT_SCHEME)));
@@ -82,7 +82,7 @@ public class MainWidgetProvider extends AppWidgetProvider {
                 break;
             case ACTION_WIDGET_UPDATE:
                 AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
-                int appWidgetIds[] = appWidgetManager.getAppWidgetIds(new ComponentName(context, WidgetProvider.class));
+                int appWidgetIds[] = appWidgetManager.getAppWidgetIds(new ComponentName(context, MainWidgetProvider.class));
                 appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds, R.id.widget_list);
                 break;
         }
