@@ -40,7 +40,7 @@ public class MainWidgetProvider extends AppWidgetProvider {
 
             // Setup refresh button:
             Intent refreshIntent = new Intent(context, MainWidgetProvider.class);
-            refreshIntent.setAction(WidgetProvider.REFRESH_WIDGET_ACTION);
+            refreshIntent.setAction(MainWidgetProvider.REFRESH_WIDGET_ACTION);
             refreshIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
             refreshIntent.setData(Uri.parse(refreshIntent.toUri(Intent.URI_INTENT_SCHEME)));
             PendingIntent refreshPendingIntent = PendingIntent.getBroadcast(context, 0, refreshIntent, PendingIntent.FLAG_UPDATE_CURRENT);
@@ -51,7 +51,7 @@ public class MainWidgetProvider extends AppWidgetProvider {
             // setup a pending intent template, and the individual items can set a fillInIntent
             // to create unique before on an item to item basis.
             Intent toastIntent = new Intent(context, MainWidgetProvider.class);
-            toastIntent.setAction(WidgetProvider.LIST_ITEM_CLICKED_ACTION);
+            toastIntent.setAction(MainWidgetProvider.LIST_ITEM_CLICKED_ACTION);
             toastIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
             intent.setData(Uri.parse(intent.toUri(Intent.URI_INTENT_SCHEME)));
             PendingIntent toastPendingIntent = PendingIntent.getBroadcast(context, 0, toastIntent, PendingIntent.FLAG_UPDATE_CURRENT);

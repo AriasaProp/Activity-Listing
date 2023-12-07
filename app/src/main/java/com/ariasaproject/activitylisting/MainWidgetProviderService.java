@@ -58,13 +58,13 @@ public final class MainWidgetProviderService extends RemoteViewsService {
             WidgetItem widgetItem = mWidgetItems.get(position);
 
             // Construct remote views item based on the item xml file and set text based on position.
-            RemoteViews rv = new RemoteViews(mContext.getPackageName(), R.layout.widget_item);
-            rv.setTextViewText(R.id.widget_item, widgetItem.mLabel);
+            RemoteViews rv = new RemoteViews(mContext.getPackageName(), R.layout.widget_layout_item);
+            rv.setTextViewText(R.id.widget_layout_item, widgetItem.mLabel);
 
             // Next, we set a fill-intent which will be used to fill-in the pending intent template
             // which is set on the collection view in MainWidgetProvider
-            Intent fillInIntent = new Intent().putExtra(MainWidgetProviderEXTRA_CLICKED_FILE, widgetItem.mFile);
-            rv.setOnClickFillInIntent(R.id.widget_item_layout, fillInIntent);
+            Intent fillInIntent = new Intent().putExtra(MainWidgetProvider.EXTRA_CLICKED_FILE, widgetItem.mFile);
+            rv.setOnClickFillInIntent(R.id.widget_layout_item_layout, fillInIntent);
 
             // You can do heaving lifting in here, synchronously. For example, if you need to
             // process an image, fetch something from the network, etc., it is ok to do it here,
